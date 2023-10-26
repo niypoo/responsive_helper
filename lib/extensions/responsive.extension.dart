@@ -14,8 +14,9 @@ extension Responsive on num {
   /// Calculates the sp (Scalable Pixel) depending on the device's screen size
   double get sp => this * ((isLandscape ? Get.height : Get.width) / fontSizeDividedRation) / 100;
 
-  bool get isLandscape => Get.context!.isLandscape;
+  // if landscape
+  bool get isLandscape => Get.key.currentContext!.isLandscape;
 
   // define what a ratio that I will divided font
-  int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 5;
+  int get fontSizeDividedRation => Get.key.currentContext!.isPhone ?  3 : 5;
 }

@@ -15,8 +15,8 @@ extension Responsive on num {
   double get sp => this * ((isLandscape ? Get.height : Get.width) / fontSizeDividedRation) / 100;
 
   // if landscape
-  bool get isLandscape => Get.key.currentContext!.isLandscape;
+  bool get isLandscape => Get.context!.isLandscape;
 
   // define what a ratio that I will divided font
-  int get fontSizeDividedRation => Get.key.currentContext!.isPhone ?  3 : 5;
+  int get fontSizeDividedRation => Get.context!.isPhone ?  3 : 5;
 }
